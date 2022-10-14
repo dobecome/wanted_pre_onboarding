@@ -1,0 +1,9 @@
+/node_modules
+
+/logs
+
+*.log
+
+/dist
+/config/*
+ecosystem.config.js
