@@ -1,10 +1,8 @@
-// const express = require('express');
-// const router = express.Router();
-// const jobPostingController = require('../controllers/jobPostingController')
-
 import express from 'express';
 import { Container } from 'typedi';
-import { JobPostingController } from '../controllers/jobPostingController';
+import { JobPostingController } from '../../controllers/jobPostingController';
+import "reflect-metadata";
+
 const jobPostingController = Container.get(JobPostingController);
 
 const router = express.Router();

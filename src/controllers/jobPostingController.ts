@@ -13,39 +13,15 @@ export class JobPostingController {
 
     //getSubDistrictUser
     getJobPostingList = async (req: Request, res: Response, next: NextFunction) => {
+        console.log('controller log')
         try {
             const district_name = req.params.district_name as string;
-              let result = null; //await this.redisService.smembersAsync(`district-${district_name}`);
+              let result = await this.jobPostingService.getDataAsync('test');
               res.send(result);
         } catch (err) {
             if (err) {
-                // err.method = 'GET Sub District User';
                 next(err);
             }
         }
     };
 }
-
-// const express = require('express')
-// const jobPostingService = require('../services/jobPostingService')
-// import { Request, Response, NextFunction } from 'express';
-
-// module.exports = class jobPostingController {
-//     getJobPostingList = async (req, res, next) => {
-//         try {
-//             console.log('get list');
-//             let result = jobPostingService.getJobPostingList();
-
-//             res.send(result)
-//             //     //   const userIds = Array.isArray(req.query.user_id) ? req.query.user_id as string[] : req.query.user_id as string;
-//             //       const district_name = req.params.district_name as string;
-//             //       let result = await this.redisService.smembersAsync(`district-${district_name}`);
-//             //       res.send(result);
-//         } catch (err) {
-//             if (err) {
-//                 // err.method = 'GET Sub District User';
-//                 next(err);
-//             }
-//         }
-//     };
-// }
