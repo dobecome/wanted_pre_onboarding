@@ -18,8 +18,6 @@ reflect-metadata 추가로 해결
 
 1. routes-controllers-services 패턴 서비스 테스트
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e40ec33a-bc71-4915-8b2f-68a0cd10775b/Untitled.png)
-
 1. swagger에서 post메소드 request body로 넘기는데 백엔드에서 req.body가 undefined임 postDataAsync
 2. DB 컬럼명 컨벤션? 테이블명_컬럼명으로 하는게 맞나? 아니면 해당 컬럼의 이름만 하나?
 3. sequelize쓸때 include 문에서 해당 Model의 조건문 받을 때, 첫 조회 Model에서 해당하는 id의 데이터를 조회 어떻게하지? getSearchedListAsync
