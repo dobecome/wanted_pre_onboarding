@@ -96,8 +96,10 @@ router.route('/')
 .patch(jobPostingController.patchJobPosting)
 
 router.route('/:posting_id')
-.get(jobPostingController.getDetailJobPostingList)
 .delete(jobPostingController.deleteJobPosting)
+
+router.route('/:posting_id/:company_id')
+.get(jobPostingController.getDetailJobPostingList)
 
 router.route('/:company_name')
 .get(jobPostingController.getSearchedJobPostingList)
