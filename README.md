@@ -14,6 +14,9 @@ Notion Link : https://www.notion.so/Nodejs-622a7ecd3aca40b3978663c90d0a6f33
 1-2) DB : PostgreSQL
 
 1-3) ORM : Sequelize ORM
+1-4) Unit Test : Swagger 활용
+![image](https://user-images.githubusercontent.com/90499822/196594661-dfdd7eb7-b617-44bf-a9a7-1e8d2f93c09c.png)
+
 
 ## 2. 에러 트러블 슈팅
 
