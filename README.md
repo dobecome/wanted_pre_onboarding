@@ -5,9 +5,9 @@ Notion Link : https://www.notion.so/Nodejs-622a7ecd3aca40b3978663c90d0a6f33
 # 프리온보딩
 [https://github.com/dobecome/wanted_pre_onboarding](https://github.com/dobecome/wanted_pre_onboarding)
 
-## 1. 프로젝트 구성
+## 1. 백엔드 프로젝트 구성
 
-1-1) 백엔드 서버 : Nodejs with typescript
+1-1) 서버 : Nodejs with typescript
 
 [Node.js + TypeScript 프로젝트 만들기](https://offbyone.tistory.com/m/445)
 
