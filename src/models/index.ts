@@ -5,32 +5,34 @@ import { Sequelize, Model } from 'sequelize';
 const basename = path.basename(__filename);
 const db = {} as any;
 
+// Sequelize ORM - PostgreSQL connection 설정
 let sequelize: Sequelize;
 
 sequelize = new Sequelize(
-    process.env.DB_INSTANCE || 'wanted',
-    process.env.DB_USER || 'postgres',
-    process.env.DB_PASSWORD || '1234qwer!',
-    {
-        host: process.env.DB_URL || 'localhost',
-        port: 5432,
-        dialect: 'postgres',
-        timezone: '+09:00',
-        define: {
-            timestamps: true
-        },
-        dialectOptions: {
-            charset: 'utf8mb4',
-            dateStrings: true,
-            typeCast: true
-        }
+  process.env.DB_INSTANCE || 'wanted',
+  process.env.DB_USER || 'postgres',
+  process.env.DB_PASSWORD || '1234qwer!',
+  {
+    host: process.env.DB_URL || 'localhost',
+    port: 5432,
+    dialect: 'postgres',
+    timezone: '+09:00',
+    define: {
+      timestamps: true
+    },
+    dialectOptions: {
+      charset: 'utf8mb4',
+      dateStrings: true,
+      typeCast: true
     }
+  }
 );
 
 sequelize.authenticate().then(() => {
   console.log('Connection has been established successfully.');
 });
 
+// Model 불러오기
 fs.readdirSync(__dirname)
   .filter(file => {
     return (
@@ -54,6 +56,7 @@ Object.keys(db).forEach(modelName => {
 // alter : true - Alter
 // sequelize.sync({ force: true });
 
+// Foreign Key 정의
 db['Company'].hasMany(db['Posting'], { foreignKey: 'company_id' });
 db['Posting'].belongsTo(db['Company'], { foreignKey: 'company_id' });
 

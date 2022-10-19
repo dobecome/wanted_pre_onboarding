@@ -11,6 +11,8 @@ const {
 
 @Service('jobPostingService')
 export class JobPostingService {
+
+    //채용 공고 조회 서비스
     getListAsync = async () => {
         let list = await PostingModel.findAll({
             attributes: ['posting_id', 'company_id', 'position', 'compensation', 'description', 'skill'],
@@ -27,6 +29,7 @@ export class JobPostingService {
         return list;
     }
 
+    // 채용 공고 검색어 조회 서비스
     getSearchedListAsync = async (search: string) => {
         let list = await PostingModel.findAll({
             attributes: ['posting_id', 'company_id', 'position', 'compensation', 'description', 'skill'],
@@ -50,6 +53,7 @@ export class JobPostingService {
         return list;
     }
 
+    // 채용 공고 상세 페이지 조회 서비스
     getDetailPostingAsync = async (posting_id: string, company_id: string) => {
         let list = await PostingModel.findAll({
             attributes: ['posting_id', 'company_id', 'position', 'compensation', 'description', 'skill'],
@@ -60,8 +64,8 @@ export class JobPostingService {
                 },
                 {
                     model: PostingModel,
-                    attributes:['posting_id'],
-                    where:{
+                    attributes: ['posting_id'],
+                    where: {
                         company_id: company_id
                     }
                 }
@@ -70,6 +74,7 @@ export class JobPostingService {
         return list;
     }
 
+    // 채용 공고 등록 서비스
     postDataAsync = async (param: Posting) => {
         return await PostingModel.create({
             posting_id: uuidv4(),
@@ -82,6 +87,7 @@ export class JobPostingService {
         })
     }
 
+    // 채용 공고 수정 서비스
     patchDataAsync = async (param: Posting) => {
         let result = await PostingModel.findOne({
             where: {
@@ -119,6 +125,7 @@ export class JobPostingService {
         }
     }
 
+    //채용 공고 삭제 서비스
     deleteDataAsync = async (id: string) => {
         try {
             // 실제 데이터를 삭제하지 않고 deleted true 처리

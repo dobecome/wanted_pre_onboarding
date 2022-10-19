@@ -6,6 +6,7 @@ import swaggerUi, { SwaggerOptions } from 'swagger-ui-express';
 const app: express.Application = express();
 const port = 3000;
 
+// Swaager 설정
 const swaggerDefinition = {
     info: {
         // API informations (required)
@@ -13,13 +14,6 @@ const swaggerDefinition = {
         version: '1.0.0', // Version (required)
         description: 'Main API' // Description (optional)
     },
-    // securityDefinitions: {
-    //   jwt: {
-    //     type: 'apiKey',
-    //     name: 'Authorization',
-    //     in: 'header'
-    //   }
-    // }
 };
 
 // Options for the swagger docs
@@ -37,6 +31,7 @@ app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 //     res.send('Hello!@@123')
 // })
 
+// routes 등록
 app.use('/', routes)
 
 app.listen(port, () => {

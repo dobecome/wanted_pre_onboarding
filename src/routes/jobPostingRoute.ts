@@ -90,21 +90,24 @@ const router = express.Router();
  *             items:
  *              $ref: '#/definitions/Posting'
  */
+// 1. 채용공고를 등록합니다. postJobPosting
+// 2. 채용공고를 수정합니다. patchJobPosting
+// 4. 채용공고 목록을 가져옵니다. getJobPostingList
 router.route('/')
 .get(jobPostingController.getJobPostingList)
 .post(jobPostingController.postJobPosting)
 .patch(jobPostingController.patchJobPosting)
 
+// 3. 채용공고를 삭제합니다. deleteJobPosting
 router.route('/:posting_id')
 .delete(jobPostingController.deleteJobPosting)
 
-router.route('/:posting_id/:company_id')
-.get(jobPostingController.getDetailJobPostingList)
-
+// 4-2. 채용공고 검색 기능 구현(선택사항 및 가산점요소). getSearchedJobPostingList
 router.route('/:company_name')
 .get(jobPostingController.getSearchedJobPostingList)
 
-// router.route('/url/:search')
-// .get(jobPostingController.getSearchedJobPostingList)
+// 5. 채용 상세 페이지를 가져옵니다. getDetailJobPostingList
+router.route('/:posting_id/:company_id')
+.get(jobPostingController.getDetailJobPostingList)
 
 export default router;

@@ -1,15 +1,10 @@
-// const express = require('express');
-// const router = express.Router();
-// const jobPostingRoute = require('./jobPostingRoute');
-
 import express from 'express';
 import jobPostingRoute from './jobPostingRoute';
 const router = express.Router();
 
-// // router.use('/company', companyRoute);
-// // router.use('/user', userRoute);
+// 공고 관련 서비스 route
 router.use('/jobPosting', jobPostingRoute);
-// // router.use('/applyHistory', applyHistoryRoute);
 
-// module.exports = router;
+// router.use('/applyHistory', applyHistoryRoute);
+
 export default router;
